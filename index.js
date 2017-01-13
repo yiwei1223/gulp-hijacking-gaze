@@ -1,5 +1,5 @@
 /**!
- * gulp-tinify-img 1.0.0 (c) 2017 Yi wei - MIT license
+ * gulp-hijacking-gaze 1.0.0 (c) 2017 Yi wei - MIT license
  * @desc 动态的在html尾部加入诱导劫持注释代码
  */
 'use strict';
@@ -16,7 +16,7 @@ module.exports = function (gaze) {
         '<!-- <body><script src="js/$touch.js"></script></body></html> --></body><!-- <body><script src="js/$touch.js"></script></body></html> --></html>' +
         '<!-- <html><script src="js/$touch.js"></script></html> -->';
 
-    // 压缩处理
+    // 注入处理
     return through.obj(function (file, enc, cb) {
         var that = this;
         if (file.isStream()) {
