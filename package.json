@@ -1,0 +1,26 @@
+{
+  "name": "gulp-hijacking-gaze",
+  "version": "1.0.0",
+  "description": "一个自动注入防劫持代码的插件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yiwei1223/gulp-hijacking-gaze.git"
+  },
+  "keywords": [
+    "gulp"
+  ],
+  "author": "yiwei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yiwei1223/gulp-hijacking-gaze/issues"
+  },
+  "homepage": "https://github.com/yiwei1223/gulp-hijacking-gaze#readme",
+  "devDependencies": {
+    "gulp-util": "^3.0.8",
+    "through": "^2.3.8"
+  }
+}
