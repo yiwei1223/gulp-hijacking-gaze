@@ -20,15 +20,23 @@ module.exports = function (gaze) {
     return through.obj(function (file, enc, cb) {
         var that = this;
         if (file.isStream()) {
-            var _sourceHtml = file.contents.toString('utf8').replace(/\s*\<\/body\>\s*\<\/html\>\s*/gi, _gaze);
-            file.contents = new Buffer(_sourceHtml);
-            cb(null, file);
+            if (/\.html/.test(file.path)) {
+                var _sourceHtml = file.contents.toString('utf8').replace(/\s*\<\/body\>\s*\<\/html\>\s*/gi, _gaze);
+                file.contents = new Buffer(_sourceHtml);
+                cb(null, file);
+            } else {
+                cb(null, file);
+            }
         }
 
         if (file.isBuffer()) {
-            var sourceHtml = file.contents.toString('utf8').replace(/\s*\<\/body\>\s*\<\/html\>\s*/gi, _gaze);
-            file.contents = new Buffer(sourceHtml);
-            cb(null, file);
+            if (/\.html/.test(file.path)) {
+                var sourceHtml = file.contents.toString('utf8').replace(/\s*\<\/body\>\s*\<\/html\>\s*/gi, _gaze);
+                file.contents = new Buffer(sourceHtml);
+                cb(null, file);
+            } else {
+                cb(null, file);
+            }
         }
     });
 };
